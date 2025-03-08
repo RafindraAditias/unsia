@@ -126,7 +126,7 @@ export default function MenuTable({ data }: MenuTableProps) {
                 <TableHead key={header.id}>
                   {flexRender(
                     header.column.columnDef.header,
-                    header.getContext(),
+                    header.getContext()
                   )}
                 </TableHead>
               ))}

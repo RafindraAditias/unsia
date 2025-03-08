@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import Sidebar from "@/app/components/dashboard/SideBar";
-import Footer from "@/app/components/Footer";
+import Footer from "@/app/components/Homepage/Footer";
 
 // Define the Role type
 export type Role = {

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Bell } from "lucide-react";
+import { useEffect } from "react";
 // SDM item interface
 interface SDMItem {
   id: number;

@@ -24,6 +24,7 @@ import Editrole from "@/app/components/dashboard/roles/Editrole";
 import Addrole from "@/app/components/dashboard/roles/Addrole"; 
 import Datarole from "@/app/constants/dashboard/datarole.json";
 import Viewroles from "@/app/components/dashboard/roles/viewrole";
+import Permission from "@/app/components/dashboard/roles/Permission";
 
 // Define the MenuItem type
 export type Menuroles = {
@@ -54,6 +55,7 @@ export default function MenuPage() {
       return [];
     });
     const [viewItem, setViewItem] = useState<Menuroles | null>(null);
+    const [PermissionItem, setPermissionItem] = useState<Menuroles | null>(null);
     const [editItem, setEditItem] = useState<Menuroles | null>(null);
     const [deleteItem, setDeleteItem] = useState<Menuroles | null>(null);
     const [isTrashPage, setIsTrashPage] = useState(false);
@@ -121,6 +123,11 @@ export default function MenuPage() {
     // Handle viewing an item
     const handleView = (item: Menuroles) => {
       setViewItem(item);
+    };
+
+    // Handle viewing an item
+    const handlePermission = (item: Menuroles) => {
+      setPermissionItem(item);
     };
   
     // Handle editing an item
@@ -286,7 +293,7 @@ export default function MenuPage() {
           onValueChange={setApplicationFilter}
           >
             <SelectTrigger className="w-[220px] text-sm text-[#495057] border-[#ced4da]">
-              <SelectValue placeholder="Short By Name Apling" />
+              <SelectValue placeholder="Short By Name Application" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="name">Short By Name Application</SelectItem>
@@ -329,6 +336,7 @@ export default function MenuPage() {
         </div>
       </div>
       <RoleTable data={paginatedData} 
+      onPermission={handlePermission}
        onView={handleView}
        onEdit={handleEdit}
        onDelete={handleDelete}
@@ -382,6 +390,15 @@ export default function MenuPage() {
                   item={viewItem}
                   isOpen={!!viewItem}
                   onClose={() => setViewItem(null)}
+                  onSave={handleSaveEdit}
+                />
+              )}
+
+               {PermissionItem && (
+                <Permission
+                  item={PermissionItem}
+                  isOpen={!!PermissionItem}
+                  onClose={() => setPermissionItem(null)}
                   onSave={handleSaveEdit}
                 />
               )}

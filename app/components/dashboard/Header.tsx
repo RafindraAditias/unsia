@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function Header() {
   return (
-    <header className="h-16 bg-white border-b border-[#e9ebec] flex items-center justify-between px-6">
+    <header className="h-16 bg-white border-b border-[#e9ebec] flex items-center justify-between px-6 py-10">
       <button className="text-[#878a99]">
         <Text  size={20} />
       </button>

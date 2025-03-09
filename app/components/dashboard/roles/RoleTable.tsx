@@ -6,7 +6,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Edit, Eye, RefreshCw, Trash2, X } from "lucide-react";
+import { Edit, Eye, RefreshCw, Trash2, X, UserRoundCog } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Menuroles } from "@/app/dashboard/roles/page"; // Import the type from the page
 interface roleTableProps {
   data: Menuroles[];
+  onPermission: (item: Menuroles) => void;
    onView: (item: Menuroles) => void;
     onEdit: (item: Menuroles) => void;
     onDelete: (item: Menuroles) => void;
@@ -35,6 +36,7 @@ export default function roleTable({
   onDelete,
   onRestore,
   onPermanentDelete,
+  onPermission,
   isTrashView = false,
  }: roleTableProps) {
   const columnHelper = createColumnHelper<Menuroles>();
@@ -110,6 +112,15 @@ export default function roleTable({
           ) : (
              // Regular view actions
              <>
+             <Button
+               variant="outline"
+               size="icon"
+               className="h-8 w-8"
+               onClick={() => onPermission(row)}
+               title="View"
+             >
+               <UserRoundCog className="h-4 w-4" />
+             </Button>
              <Button
                variant="outline"
                size="icon"

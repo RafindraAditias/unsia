@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FileInput, Search, Calendar } from "lucide-react";
-import { FileInput, Search, Calendar } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -18,9 +17,6 @@ import MenuTable from "@/app/components/dashboard/AuditTable";
 // Define the MenuItem type
 export type MenuItem = {
   id: number;
-// Define the MenuItem type
-export type MenuItem = {
-  id: number;
   application: string;
   createUser: string;
   timeLogin: string;
@@ -30,11 +26,11 @@ export type MenuItem = {
 };
 
 // Sample data
-const menuItems: MenuItem[] = [
+
 const menuItems: MenuItem[] = [
   {
     id: 1,
-    id: 1,
+
     application: "SPPM",
     createUser: "Dashboard",
     timeLogin: "Dashboard",
@@ -44,7 +40,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 2,
-    id: 2,
+
     application: "SPPM",
     createUser: "Proposal",
     timeLogin: "Proposal",
@@ -54,7 +50,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 3,
-    id: 3,
+
     application: "SPPM",
     createUser: "Penelitian",
     timeLogin: "Penelitian",
@@ -64,7 +60,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 4,
-    id: 4,
+
     application: "Marketing",
     createUser: "Dashboard",
     timeLogin: "Dashboard",
@@ -74,7 +70,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 5,
-    id: 5,
+
     application: "Marketing",
     createUser: "Referral",
     timeLogin: "Referral",
@@ -84,7 +80,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 6,
-    id: 6,
+
     application: "Tracer Study",
     createUser: "Dashboard",
     timeLogin: "Dashboard",
@@ -94,7 +90,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 7,
-    id: 7,
+
     application: "Tracer Study",
     createUser: "Quizoner",
     timeLogin: "Quizoner",
@@ -104,7 +100,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 8,
-    id: 8,
+
     application: "Tracer Study",
     createUser: "Report",
     timeLogin: "Report",
@@ -116,13 +112,11 @@ const menuItems: MenuItem[] = [
 
 export default function MenuPage() {
   // State for filtering, searching and pagination
-export default function MenuPage() {
-  // State for filtering, searching and pagination
   const [searchQuery, setSearchQuery] = useState("");
-  const [applicationFilter, setApplicationFilter] = useState("all");
+
   const [applicationFilter, setApplicationFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(0);
-  const [data, setData] = useState<MenuItem[]>(menuItems);
+
   const [data, setData] = useState<MenuItem[]>(menuItems);
   const pageSize = 5;
 
@@ -151,7 +145,6 @@ export default function MenuPage() {
     ) {
       return false;
     }
-
 
     return true;
   });
@@ -187,98 +180,97 @@ export default function MenuPage() {
             <FileInput className="h-4 w-4 mr-2" /> Export
           </Button>
         </div>
-
-        <div className="flex items-center space-x-2">
-          <div className="relative w-60">
-            <Calendar className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
-    <div className="p-6">
-      <Header />
-      <div className="px-6 py-4 border-b border-[#e9ebec] flex items-center justify-between">
-        <h1 className="text-lg font-medium text-[#495057]">Roles</h1>
-        <div className="flex items-center gap-2 text-sm text-[#878a99]">
-          <span className="text-[#878a99]">Audit Trail</span>
-          <span>/</span>
-          <span className="text-[#878a99]">View</span>
+      </div>
+      <div className="flex items-center space-x-2">
+        <div className="relative w-60">
+          <Calendar className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
         </div>
       </div>
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center space-x-2">
-          <Button variant="default" className="bg-blue-500 hover:bg-blue-600">
-            <FileInput className="h-4 w-4 mr-2" /> Export
-          </Button>
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <div className="relative w-60">
-            <Calendar className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
-            <Input
-              type="text"
-              type="text"
-              placeholder="Date"
-              className="border rounded px-10 py-2 w-full text-gray-500 placeholder-gray-400"
-              className="border rounded px-10 py-2 w-full text-gray-500 placeholder-gray-400"
-            />
-          </div>
-
-          <div className="relative w-60">
-            <Search className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
-          </div>
-
-          <div className="relative w-60">
-            <Search className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
-            <Input
-              type="search"
-              placeholder="Search..."
-              className="border rounded px-10 py-2 w-full text-gray-500 placeholder-gray-400"
-              className="border rounded px-10 py-2 w-full text-gray-500 placeholder-gray-400"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+      <div className="p-6">
+        <Header />
+        <div className="px-6 py-4 border-b border-[#e9ebec] flex items-center justify-between">
+          <h1 className="text-lg font-medium text-[#495057]">Roles</h1>
+          <div className="flex items-center gap-2 text-sm text-[#878a99]">
+            <span className="text-[#878a99]">Audit Trail</span>
+            <span>/</span>
+            <span className="text-[#878a99]">View</span>
           </div>
         </div>
-      </div>
-      <MenuTable data={paginatedData} />
-      <div className="flex items-center justify-between mt-6">
-        <div>
-          <p className="text-sm text-gray-500">
-            {totalItems > 0
-              ? `${startIndex + 1}-${endIndex} of ${totalItems}`
-              : "0 of 0"}
-          </p>
-        </div>
-        <div className="flex items-center space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
-            disabled={currentPage === 0}
-          >
-            Previous
-          </Button>
-          {pageNumbers.map((pageNum) => (
-            <Button
-              key={pageNum}
-              variant={currentPage === pageNum ? "default" : "outline"}
-              size="sm"
-              className={currentPage === pageNum ? "bg-blue-600" : ""}
-              onClick={() => setCurrentPage(pageNum)}
-            >
-              {pageNum + 1}
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center space-x-2">
+            <Button variant="default" className="bg-blue-500 hover:bg-blue-600">
+              <FileInput className="h-4 w-4 mr-2" /> Export
             </Button>
-          ))}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() =>
-              setCurrentPage((prev) => Math.min(totalPages - 1, prev + 1))
-            }
-            disabled={currentPage >= totalPages - 1}
-          >
-            Next
-          </Button>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <div className="relative w-60">
+              <Calendar className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
+              <Input
+                type="text"
+                placeholder="Date"
+                className="border rounded px-10 py-2 w-full text-gray-500 placeholder-gray-400"
+              />
+            </div>
+
+            <div className="relative w-60">
+              <Search className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
+            </div>
+
+            <div className="relative w-60">
+              <Search className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
+              <Input
+                type="search"
+                placeholder="Search..."
+                className="border rounded px-10 py-2 w-full text-gray-500 placeholder-gray-400"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
-      </div>
-      <Footer />
+        <MenuTable data={paginatedData} />
+        <div className="flex items-center justify-between mt-6">
+          <div>
+            <p className="text-sm text-gray-500">
+              {totalItems > 0
+                ? `${startIndex + 1}-${endIndex} of ${totalItems}`
+                : "0 of 0"}
+            </p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
+              disabled={currentPage === 0}
+            >
+              Previous
+            </Button>
+            {pageNumbers.map((pageNum) => (
+              <Button
+                key={pageNum}
+                variant={currentPage === pageNum ? "default" : "outline"}
+                size="sm"
+                className={currentPage === pageNum ? "bg-blue-600" : ""}
+                onClick={() => setCurrentPage(pageNum)}
+              >
+                {pageNum + 1}
+              </Button>
+            ))}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(totalPages - 1, prev + 1))
+              }
+              disabled={currentPage >= totalPages - 1}
+            >
+              Next
+            </Button>
+          </div>
+        </div>
+        <Footer />
       </div>
       <MenuTable data={paginatedData} />
       <div className="flex items-center justify-between mt-6">

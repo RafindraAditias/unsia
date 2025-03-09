@@ -1,22 +1,24 @@
-import React from 'react'
+import React from "react";
+import Hero from "@/components/shared/dashboardG/hero";
+import Grafik from "@/components/ui/grafik";
+import TopPath from "@/components/shared/dashboardG/topPath";
 
 const page = () => {
   return (
     <div>
-    <div>
-        <div className='rounded-md bg-gradient-to-r from-[#838FB9] to-[#3EC9D6]'>
-            Selamat Pagi, <br /> Alberd Flores
+      <div className="">
+        <div>
+          <Hero />
+        </div>
+        <div className="">
+          <Grafik />
         </div>
         <div>
-
+          <TopPath />
         </div>
+      </div>
     </div>
+  );
+};
 
-    <div>
-
-    </div>
-    </div>
-  )
-}
-
-export default page
+export default page;

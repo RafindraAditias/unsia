@@ -10,7 +10,6 @@ export default function Home() {
       <div className="pt-[125px] px-[25px] bg-[#fafafa] text-black">
         <UniversityDashboard />
       </div>
-      <Sidebar />
       <Footer />
     </div>
   );

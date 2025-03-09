@@ -10,7 +10,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Header } from "@/app/components/dashboard/Header";
 import Footer from "@/app/components/Homepage/Footer";
 import RoleTable from "@/app/components/dashboard/roles/RoleTable";
 import {
@@ -233,7 +232,6 @@ export default function MenuPage() {
 
   return (
     <div className="p-6">
-      <Header />
       <div className="px-6 py-4 border-b border-[#e9ebec] flex items-center justify-between">
         <h1 className="text-lg font-medium text-[#495057]">{isTrashPage ? "Trash" : "Role"}</h1>
         <div className="flex items-center gap-2 text-sm text-[#878a99]">

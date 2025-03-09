@@ -1,3 +1,4 @@
+import { MenuItem } from "@/app/dashboard/menu/page";
 import {
   LayoutDashboard,
   Menu,

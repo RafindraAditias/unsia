@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "SIPPM",
+      "application": "SIPPM",
+      "menu": "Dashboard",
+      "parent": "-",
+      "path": "/dashboard",
+      "role": "Administrator",
+      "deleted": false
+    },
+    {
+      "id": 2,
+      "name": "SIPPM",
+      "application": "SIPPM",
+      "menu": "Proposal",
+      "parent": "-",
+      "path": "/proposal",
+      "role": "Ketua Yayasan",
+      "deleted": false
+    },
+    {
+      "id": 3,
+      "name": "SIPPM",
+      "application": "SIPPM",
+      "menu": "Penelitian",
+      "parent": "-",
+      "path": "/penelitian",
+      "role": "Anggota",
+      "deleted": false
+    },
+    {
+      "id": 4,
+      "name": "Marketing",
+      "application": "Marketing",
+      "menu": "Dashboard",
+      "parent": "Proposal_id",
+      "path": "/dashboard",
+      "role": "Tutor",
+      "deleted": false
+    },
+    {
+      "id": 5,
+      "name": "Marketing",
+      "application": "Marketing",
+      "menu": "Refferai",
+      "parent": "Proposal_id",
+      "path": "/refferai",
+      "role": "Warak",
+      "deleted": false
+    },
+    {
+      "id": 6,
+      "name": "HRMS",
+      "application": "HRMS",
+      "menu": "Employee List",
+      "parent": "Dashboard",
+      "path": "/employees",
+      "role": "HR",
+      "deleted": false
+    },
+    {
+      "id": 7,
+      "name": "HRMS",
+      "application": "HRMS",
+      "menu": "Payroll",
+      "parent": "Dashboard",
+      "path": "/payroll",
+      "role": "HR",
+      "deleted": false
+    },
+    {
+      "id": 8,
+      "name": "HRMS",
+      "application": "HRMS",
+      "menu": "Leaves",
+      "parent": "Dashboard",
+      "path": "/leaves",
+      "role": "HR",
+      "deleted": false
+    },
+    {
+      "id": 9,
+      "name": "E-Commerce",
+      "application": "E-Commerce",
+      "menu": "Products",
+      "parent": "Dashboard",
+      "path": "/products",
+      "role": "Manager",
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "name": "E-Commerce",
+      "application": "E-Commerce",
+      "menu": "Orders",
+      "parent": "Dashboard",
+      "path": "/orders",
+      "role": "Manager",
+      "deleted": false
+    },
+    {
+      "id": 11,
+      "name": "E-Commerce",
+      "application": "E-Commerce",
+      "menu": "Customers",
+      "parent": "Dashboard",
+      "path": "/customers",
+      "role": "Manager",
+      "deleted": false
+    },
+    {
+      "id": 12,
+      "name": "Finance",
+      "application": "Finance",
+      "menu": "Dashboard",
+      "parent": "-",
+      "path": "/finance-dashboard",
+      "role": "Finance",
+      "deleted": false
+    },
+    {
+      "id": 13,
+      "name": "Finance",
+      "application": "Finance",
+      "menu": "Invoices",
+      "parent": "Dashboard",
+      "path": "/invoices",
+      "role": "Finance",
+      "deleted": false
+    },
+    {
+      "id": 14,
+      "name": "Finance",
+      "application": "Finance",
+      "menu": "Expenses",
+      "parent": "Dashboard",
+      "path": "/expenses",
+      "role": "Finance",
+      "deleted": false
+    },
+    {
+      "id": 15,
+      "name": "Project Management",
+      "application": "PMS",
+      "menu": "Tasks",
+      "parent": "Dashboard",
+      "path": "/tasks",
+      "role": "Project Manager",
+      "deleted": false
+    },
+    {
+      "id": 16,
+      "name": "Project Management",
+      "application": "PMS",
+      "menu": "Teams",
+      "parent": "Dashboard",
+      "path": "/teams",
+      "role": "Project Manager",
+      "deleted": false
+    },
+    {
+      "id": 17,
+      "name": "Project Management",
+      "application": "PMS",
+      "menu": "Reports",
+      "parent": "Dashboard",
+      "path": "/pms-reports",
+      "role": "Project Manager",
+      "deleted": false
+    },
+    {
+      "id": 18,
+      "name": "Academic",
+      "application": "LMS",
+      "menu": "Courses",
+      "parent": "Dashboard",
+      "path": "/courses",
+      "role": "Lecturer",
+      "deleted": false
+    },
+    {
+      "id": 19,
+      "name": "Academic",
+      "application": "LMS",
+      "menu": "Students",
+      "parent": "Dashboard",
+      "path": "/students",
+      "role": "Lecturer",
+      "deleted": false
+    },
+    {
+      "id": 20,
+      "name": "Academic",
+      "application": "LMS",
+      "menu": "Grades",
+      "parent": "Dashboard",
+      "path": "/grades",
+      "role": "Lecturer",
+      "deleted": false
+    }
+  ]
+}

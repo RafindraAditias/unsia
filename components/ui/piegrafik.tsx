@@ -54,18 +54,18 @@ const ApexChart: React.FC = () => {
     <div className="flex flex-col gap-4">
       {/* Chart */}
       <div className="chart-wrap">
-        <ReactApexChart options={options} series={series} type="donut" width={380} />
+        <ReactApexChart options={options} series={series} type="donut" width={280} />
       </div>
 
       {/* Daftar label dengan nilai dalam 2 kolom */}
-      <ul className="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-lg">
+      <ul className="mt-4 grid grid-cols-2 gap-x-0 gap-y-2 text-lg text-poppins">
         {series.map((value, index) => (
           <li key={index} className="flex items-center gap-2">
             <span
-              className="inline-block w-4 h-4 rounded-full"
+              className="inline-block w-4 h-4 rounded-fullf5a"
               style={{ backgroundColor: options.colors?.[index % options.colors.length] || "#ccc" }}
             ></span>
-            <span className="font-semibold">{labels[index]}</span>
+            <span className="font-base text-[#495057]">{labels[index]}</span>
           </li>
         ))}
       </ul>

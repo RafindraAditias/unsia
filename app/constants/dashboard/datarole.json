@@ -1,0 +1,132 @@
+{
+    "data": [
+        {
+            "application": "Administrator",
+            "description": "admin",
+            "color": "#9e3030",
+            "level": "",
+            "id": 21
+          },
+          {
+            "application": "Ketua Yayasan",
+            "description": "anggota",
+            "color": "#a32f2f",
+            "level": "",
+            "id": 22
+          },
+          {
+            "application": "Perguruan Tinggi",
+            "description": "anggota",
+            "color": "#d42727",
+            "level": "",
+            "id": 23
+          },
+          {
+            "application": "Kepala",
+            "description": "admin",
+            "color": "#801e1e",
+            "level": "",
+            "id": 24
+          },
+          {
+            "application": "Rektor",
+            "description": "ketua",
+            "color": "#ca4141",
+            "level": "",
+            "id": 25
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#17abb0",
+            "level": "",
+            "id": 26
+          },
+          {
+            "application": "Administrator",
+            "description": "admin",
+            "color": "#258020",
+            "level": "",
+            "id": 27
+          },
+          {
+            "application": "Rektor",
+            "description": "adasda",
+            "color": "#465da9",
+            "level": "",
+            "id": 28
+          },
+          {
+            "application": "Anggota",
+            "description": "ketua",
+            "color": "#91a2da",
+            "level": "",
+            "id": 29
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          },
+          {
+            "application": "Kepala",
+            "description": "anggota",
+            "color": "#393a3b",
+            "level": "",
+            "id": 30,
+            "deleted": false
+          }
+    ]
+  }
+  

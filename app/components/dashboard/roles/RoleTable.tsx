@@ -6,7 +6,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Edit, Eye, Trash2 } from "lucide-react";
+import { Edit, Eye, RefreshCw, Trash2, X } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -16,22 +16,35 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { MenuItem } from "@/app/dashboard/roles/page"; // Import the type from the page
-
-interface MenuTableProps {
-  data: MenuItem[];
+import { Menuroles } from "@/app/dashboard/roles/page"; // Import the type from the page
+interface roleTableProps {
+  data: Menuroles[];
+   onView: (item: Menuroles) => void;
+    onEdit: (item: Menuroles) => void;
+    onDelete: (item: Menuroles) => void;
+    onRestore?: (item: Menuroles) => void;
+    onPermanentDelete?: (item: Menuroles) => void;
+    isTrashView?: boolean;
 }
 
 
-export default function MenuTable({ data }: MenuTableProps) {
-  const columnHelper = createColumnHelper<MenuItem>();
+export default function roleTable({ 
+  data,
+  onView,
+  onEdit,
+  onDelete,
+  onRestore,
+  onPermanentDelete,
+  isTrashView = false,
+ }: roleTableProps) {
+  const columnHelper = createColumnHelper<Menuroles>();
 
   const columns = [
     columnHelper.accessor("id", {
       header: "No",
       cell: (info) => info.getValue(),
     }),
-    columnHelper.accessor("name", {
+    columnHelper.accessor("application", {
       header: "Name Application",
       cell: (info) => info.getValue(),
     }),
@@ -52,33 +65,80 @@ export default function MenuTable({ data }: MenuTableProps) {
             );
         },
       }),
+      ...(isTrashView
+        ? [
+            columnHelper.accessor(
+              (row) =>
+                row.deletedAt ? new Date(row.deletedAt).toLocaleString() : "",
+              {
+                id: "deletedAt",
+                header: "Deleted At",
+                cell: (info) => info.getValue(),
+              },
+            ),
+          ]
+        : []),
     columnHelper.accessor("id", {
         id: "actions",
         header: "Action",
         cell: (info) => {
+          const row = info.row.original;
           return (
             <div className="flex items-center space-x-2">
+               {isTrashView ? (
+              // Trash view actions
+              <>
               <Button
                 variant="outline"
                 size="icon"
                 className="h-8 w-8 text-green-600"
+                onClick={() => onRestore?.(row)}
+                title="Restore"
               >
-                <Edit className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-8 w-8 text-blue-600"
-              >
-                <Eye className="h-4 w-4" />
+                <RefreshCw className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="icon"
                 className="h-8 w-8 text-red-600"
+                onClick={() => onPermanentDelete?.(row)}
+                title="Delete Permanently"
               >
-                <Trash2 className="h-4 w-4" />
+                <X className="h-4 w-4" />
               </Button>
+            </>
+          ) : (
+             // Regular view actions
+             <>
+             <Button
+               variant="outline"
+               size="icon"
+               className="h-8 w-8 text-blue-600"
+               onClick={() => onView(row)}
+               title="View"
+             >
+               <Eye className="h-4 w-4" />
+             </Button>
+             <Button
+               variant="outline"
+               size="icon"
+               className="h-8 w-8 text-green-600"
+               onClick={() => onEdit(row)}
+               title="Edit"
+             >
+               <Edit className="h-4 w-4" />
+             </Button>
+             <Button
+               variant="outline"
+               size="icon"
+               className="h-8 w-8 text-red-600"
+               onClick={() => onDelete(row)}
+               title="Move to Trash"
+             >
+               <Trash2 className="h-4 w-4" />
+             </Button>
+           </>
+         )}
             </div>
           );
         },
@@ -122,7 +182,7 @@ export default function MenuTable({ data }: MenuTableProps) {
           ) : (
             <TableRow>
               <TableCell colSpan={columns.length} className="text-center">
-                No results.
+              {isTrashView ? "No items in trash." : "No results."}
               </TableCell>
             </TableRow>
           )}

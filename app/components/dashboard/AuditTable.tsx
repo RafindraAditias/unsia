@@ -15,8 +15,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MenuItem } from "@/app/dashboard/audit-trail/page"; // Import the type from the page
+import UserProfileModal from "@/app/components/dashboard/UserProfileModal";
 
 interface MenuTableProps {
   data: MenuItem[];
@@ -24,6 +27,7 @@ interface MenuTableProps {
 
 export default function MenuTable({ data }: MenuTableProps) {
   const columnHelper = createColumnHelper<MenuItem>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const columns = [
     columnHelper.accessor("id", {
@@ -55,6 +59,7 @@ export default function MenuTable({ data }: MenuTableProps) {
             variant="outline"
             size="icon"
             className="h-8 w-8 text-blue-600"
+            onClick={() => setIsModalOpen(true)}
           >
             <Eye className="h-4 w-4" />
           </Button>
@@ -106,6 +111,11 @@ export default function MenuTable({ data }: MenuTableProps) {
           )}
         </TableBody>
       </Table>
+
+      <UserProfileModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

@@ -4,3 +4,9 @@ declare module "@/app/constants/menu-data.json" {
   const value: MenuItem[];
   export default value;
 }
+// types/role-item.d.ts
+declare module "@/app/constants/datarole.json" {
+  import { Menuroles } from "@/app/dashboard/roles/page";
+  const value: Menuroles[];
+  export default value;
+}

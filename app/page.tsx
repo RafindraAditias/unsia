@@ -15,10 +15,10 @@ export default function Home() {
     setIsModalOpen(false);
   };
   return (
-    <div className="h-full w-full bg-[#fafafa] bg-no-repeat bg-cover bg-center bg-[url(/images/unsiaBgHome.png)]">
+    <div className="h-full w-full bg-[#fafafa] bg-no-repeat bg-cover bg-center bg-[url(/images/unsiaBgHome.png)] ">
       <NavbarHome handleOpenModal={handleOpenModal} />
       {isModalOpen ? <Modal handleCloseModal={handleCloseModal} /> : <></>}
-      <div className="pt-[125px] px-[25px]  text-black">
+      <div className="pt-[125px] px-[25px]  text-black ">
         <UniversityDashboard />
       </div>
       <Footer />

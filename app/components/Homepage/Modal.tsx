@@ -9,8 +9,8 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ handleCloseModal }) => {
   return (
-    <section className="flex w-full h-full fixed top-0 left-0 bg-black/50 z-30 justify-center items-center">
-      <div className="overflow-y-scroll bg-white w-[911px] h-[912px] flex flex-col relative rounded-lg">
+    <section className="flex w-full h-[1121px] absolute top-0 left-0 bg-black/50 z-30 justify-center items-center ">
+      <div className=" bg-white w-[911px] max-h-[912px] flex flex-col relative rounded-lg">
         <Image
           src="/images/bg top image.png"
           width={911}
@@ -42,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({ handleCloseModal }) => {
             </button>
           </div>
         </div>
-        <form action="" className="w-full pt-[116px] px-[44px]">
+        <form action="" className="w-full pt-[116px] px-[44px] pb-4">
           <div className="flex flex-row items-center gap-[16px]">
             <div className="flex flex-col text-left w-1/2">
               <label className="mb-[8px]" htmlFor="">
